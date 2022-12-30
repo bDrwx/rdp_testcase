@@ -2,11 +2,6 @@ from http.server import BaseHTTPRequestHandler
 from http.client import HTTPConnection
 import logging
 import re
-import socketserver
-
-
-PORT = 9191
-
 
 logging.basicConfig(level=logging.DEBUG)
 HTTPConnection.debuglevel = 1

@@ -2,7 +2,7 @@
 import sys
 import socketserver
 import click
-from TestCase2.proxy import ProxyHTTPRequestHandler
+from testcase2.proxy import ProxyHTTPRequestHandler
 
 
 @click.command()
