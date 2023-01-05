@@ -1,7 +1,9 @@
 """Console script for rdp_testcase."""
-import sys
 import socketserver
+import sys
+
 import click
+
 from rdp_testcase.testcase2.proxy import ProxyHTTPRequestHandler
 
 

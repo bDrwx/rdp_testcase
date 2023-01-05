@@ -1,7 +1,7 @@
-from http.server import BaseHTTPRequestHandler
-from http.client import HTTPConnection
 import logging
 import re
+from http.client import HTTPConnection
+from http.server import BaseHTTPRequestHandler
 
 logging.basicConfig(level=logging.DEBUG)
 HTTPConnection.debuglevel = 1
@@ -47,3 +47,5 @@ class ProxyHTTPRequestHandler(BaseHTTPRequestHandler):
         except (Exception, IndexError):
             charset = "utf-8"
         return charset
+    def _get_content(self, host, path, headers):
+        
