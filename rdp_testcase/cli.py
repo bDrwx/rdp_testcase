@@ -4,7 +4,7 @@ import sys
 
 import click
 
-from rdp_testcase.testcase2.proxy import ProxyHTTPRequestHandler
+from testcase2.proxy import ProxyHTTPRequestHandler
 
 
 @click.command()
