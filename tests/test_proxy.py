@@ -11,7 +11,9 @@ def get_handler():
 
     class MockRequest(object):
         def makefile(self, *args, **kwargs):
-            return IO(b"GET /index.html HTTP/1.1\r\nHost: localhost:8080\r\n\r\n")
+            return IO(
+                b"GET http://localhost:8080/ HTTP/1.1\r\nHost: localhost:8080\r\n\r\n"
+            )
 
         def sendall(self, *args):
             pass
@@ -105,7 +107,7 @@ def test_get_charset_exist(get_handler):
 
 def test_get_charset_no_exist(get_handler):
     charset = get_handler.handler._get_charset("Content-Type: text/html")
-    assert charset == "utf-8"
+    assert charset == "UTF-8"
 
 
 def test_clear_from_obscen(get_handler, obscen_text, clear_text):

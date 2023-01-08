@@ -8,15 +8,11 @@ from rdp_testcase.testcase2.proxy import ProxyHTTPRequestHandler
 
 
 @click.command()
-def main(args=None):
+@click.option("--port", default=8000, help="Port to listen on.")
+def main(port, args=None):
     """Console script for rdp_testcase."""
-    click.echo(
-        "Replace this message by putting your code into " "rdp_testcase.cli.main"
-    )
-    click.echo("See click documentation at https://click.palletsprojects.com/")
-    PORT = 9191
-    with socketserver.TCPServer(("", PORT), ProxyHTTPRequestHandler) as httpd:
-        print("serving at port", PORT)
+    click.echo(f"Obscen free http proxy for RDP.RU. Server listening on port {port}")
+    with socketserver.TCPServer(("", port), ProxyHTTPRequestHandler) as httpd:
         httpd.serve_forever()
     return 0
 
