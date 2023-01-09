@@ -17,6 +17,9 @@ rdp_testcase
 
 
 Task for pass interview to RDP.RU company
+* Testcase1
+  Реализован алгоритм быстрой сортировки с одним опортным элементом и тесты к нему.
+
 - Testcase2
 -- В корне проекта подготовлен Dockerfile для сборки образа и запуска контейнера
         ```
